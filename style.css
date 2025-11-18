@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    margin: 2rem 0;             
+    font-size: 5vmin;           
+    color: #ffffff;            
+    font-weight: bold;          
+    text-shadow: 0 0 1rem #000;
+    font-family: 'Lucida Sans', 'Arial', sans-serif;
+}
+
+#author {
+    margin: 0.5rem 0 2rem 0;  
+    font-size: 3vmin;         
+    font-weight: bold;        
+    color: #ffffc7;          
+    text-shadow: 0 0 0.5rem #000; 
+    font-family: 'Lucida Sans', 'Arial', sans-serif;
+}
+
+body{
+    background-color: #548687;
+    text-align: center;
+    /* font-size: 20px; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.game{
+    height: 50vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 1rem black;
+    font-size: 13vmin;
+    font-style: italic;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.box.x {
+    color: rgb(143, 16, 168);
+    text-shadow: 0 0 1rem rgb(143, 16, 168);
+    font-weight: bold;
+}
+
+.box.o {
+    color: rgb(13, 57, 145);
+    text-shadow: 0 0 1rem rgb(13, 57, 145);
+    font-weight: bold;
+}
+
+#rebtn{
+    height: 7vmin;
+    width: 18vmin;
+    color:blue;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    border-radius: 1rem;
+    font-weight: bold;
+    background-color: rgb(11, 171, 117);
+}
+
+#newgame{
+    height: 11vmin;
+    width: 17vmin;
+    color:blue;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    border-radius: 1rem;
+    font-weight: bold;
+    background-color: rgb(11, 171, 117);
+}
+
+#mesg{
+    color: #ffffc7;
+    font-size: 8vmin;
+}
+
+main {
+    position: relative;
+}
+
+
+.msg{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20vmin;
+    z-index: 10;
+    text-align: center;
+
+}
+
+.hide{
+    display: none;
+}
+
+.animate {
+  animation: zoomIn 260ms cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 2vmin;
+    color: #ffffc7;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 0.3rem #000;
+    font-family: 'Lucida Sans', 'Arial', sans-serif;
+}
+
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#mesg.show {
+    animation: winnerAnim 500ms ease forwards;
+}
+
+@keyframes winnerAnim {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-5deg);
+    }
+    60% {
+        transform: scale(1.2) rotate(3deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+#author {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
